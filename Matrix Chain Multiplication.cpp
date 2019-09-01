@@ -23,11 +23,11 @@ void matrixChainOrder(int p[], int n) {
 				if (q < m[i][j]) 
 				{ 
 					m[i][j] = q; 
-					m[j][i] = k; 
+					bracket[i][j] = k; 
 				}}}} 
 	char name = 'A'; 
 	cout << "Optimal Parenthesization is: "; 
-	printParenthesis(1, n-1, n, (int *)m, name); 
+	printParenthesis(1, n-1, n, (int *)bracket, name); 
 	cout << "\nOptimal Cost is : " << m[1][n-1]; 
 } 
 int main() 
