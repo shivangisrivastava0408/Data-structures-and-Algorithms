@@ -4,14 +4,15 @@ def count(arr):
 	output=[0]*len(arr)
 	for x in arr:
 		frequency[x]+=1
-	j=0
 	for w in range(a+1):
-		if frequency[w]==0:
+		if w==0:
 			continue
 		else:
-			for i in range(frequency[w]):
-				output[j]=w
-				j+=1
+			frequency[w]=frequency[w]+frequency[w-1]
+	for w in range(len(arr)):
+		k=frequency[arr[w]]
+		output[k-1]=arr[w]
+		frequency[arr[w]]-=1
 	return output
 
 test=list(map(int,input().split()))
